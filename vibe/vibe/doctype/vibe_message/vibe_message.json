@@ -1,0 +1,97 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "creation": "2026-01-29 20:46:58.489011",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_idyy",
+  "message_type",
+  "status",
+  "title",
+  "indicator_color",
+  "message",
+  "message_sent"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_idyy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "message_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Message Type",
+   "options": "Broadcast",
+   "read_only_depends_on": "eval:doc.status===\"Sent\"",
+   "reqd": 1
+  },
+  {
+   "fieldname": "message",
+   "fieldtype": "Text Editor",
+   "label": "Message",
+   "read_only_depends_on": "eval:doc.status===\"Sent\"",
+   "reqd": 1
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "no_copy": 1,
+   "options": "Draft\nQueued\nSent",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title",
+   "read_only_depends_on": "eval:doc.status===\"Sent\""
+  },
+  {
+   "fieldname": "message_sent",
+   "fieldtype": "Datetime",
+   "label": "Message Sent",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "default": "Blue",
+   "fieldname": "indicator_color",
+   "fieldtype": "Select",
+   "label": "Indicator Color",
+   "options": "Red\nOrange\nYellow\nGreen\nBlue\nPurple",
+   "read_only_depends_on": "eval:doc.status===\"Sent\""
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-30 01:30:11.696546",
+ "modified_by": "Administrator",
+ "module": "Vibe",
+ "name": "Vibe Message",
+ "naming_rule": "Random",
+ "owner": "gnosbush@nosbush.co",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

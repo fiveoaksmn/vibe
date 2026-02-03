@@ -26,7 +26,7 @@ app_license = "mit"
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/vibe/css/vibe.css"
-# app_include_js = "/assets/vibe/js/vibe.js"
+app_include_js = "/assets/vibe/js/vibe.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/vibe/css/vibe.css"
