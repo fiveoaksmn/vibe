@@ -1,0 +1,335 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:theme_title",
+ "creation": "2026-02-03 01:00:50.455826",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_main",
+  "theme_title",
+  "theme_code",
+  "disabled",
+  "description",
+  "published",
+  "section_palette",
+  "palette",
+  "section_navbar",
+  "navbar_background_color",
+  "navbar_icon_color",
+  "column_break_nqbi",
+  "nabar_breadcrumb_color",
+  "navbar_title_color",
+  "column_break_cxmb",
+  "html_nomi",
+  "section_sidebar",
+  "sidebar_background_color",
+  "section_break_axck",
+  "sidebar_header_column",
+  "sidebar_header_background_color",
+  "sidebar_header_title_color",
+  "sidebar_header_subtitle_color",
+  "sidebar_header_hover_background_color",
+  "sidebar_header_hover_title_color",
+  "sidebar_header_hover_subtitle_color",
+  "sidebar_header_active_background_color",
+  "sidebar_header_active_title_color",
+  "sidebar_header_active_subtitle_color",
+  "sidebar_menu_column",
+  "sidebar_middle_icon_color",
+  "sidebar_middle_item_color",
+  "sidebar_middle_item_suffix_color",
+  "sidebar_middle_hover_background_color",
+  "sidebar_middle_hover_icon_color",
+  "sidebar_middle_hover_item_color",
+  "sidebar_middle_hover_item_suffix_color",
+  "sidebar_middle_active_background_color",
+  "sidebar_middle_active_icon_color",
+  "sidebar_middle_active_item_color",
+  "sidebar_middle_active_item_suffix_color",
+  "sidebar_footer_column",
+  "sidebar_footer_background_color",
+  "sidebar_footer_title_color",
+  "sidebar_footer_subtitle_color",
+  "sidebar_footer_hover_background_color",
+  "sidebar_footer_hover_title_color",
+  "sidebar_footer_hover_subtitle_color"
+ ],
+ "fields": [
+  {
+   "fieldname": "theme_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name",
+   "no_copy": 1,
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "section_main",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_palette",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "palette",
+   "fieldtype": "Table",
+   "label": "Color Palette",
+   "options": "Vibe Palette"
+  },
+  {
+   "fieldname": "section_navbar",
+   "fieldtype": "Section Break",
+   "label": "Navbar"
+  },
+  {
+   "fieldname": "navbar_background_color",
+   "fieldtype": "Select",
+   "label": "Background Color"
+  },
+  {
+   "default": "0",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "label": "Disabled"
+  },
+  {
+   "fieldname": "theme_code",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Code",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "section_sidebar",
+   "fieldtype": "Section Break",
+   "hide_border": 1,
+   "label": "Sidebar"
+  },
+  {
+   "fieldname": "sidebar_background_color",
+   "fieldtype": "Select",
+   "label": "Background Color"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "Description"
+  },
+  {
+   "default": "0",
+   "description": "Themes that haven't been published yet are only visible to developers.",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "Published"
+  },
+  {
+   "fieldname": "section_break_axck",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sidebar_header_column",
+   "fieldtype": "Column Break",
+   "label": "Header"
+  },
+  {
+   "fieldname": "sidebar_menu_column",
+   "fieldtype": "Column Break",
+   "label": "Menu Items"
+  },
+  {
+   "fieldname": "sidebar_footer_column",
+   "fieldtype": "Column Break",
+   "label": "Footer"
+  },
+  {
+   "fieldname": "sidebar_header_title_color",
+   "fieldtype": "Select",
+   "label": "Title"
+  },
+  {
+   "fieldname": "sidebar_header_subtitle_color",
+   "fieldtype": "Select",
+   "label": "Subtitle"
+  },
+  {
+   "fieldname": "sidebar_header_hover_background_color",
+   "fieldtype": "Select",
+   "label": "Hover Background"
+  },
+  {
+   "fieldname": "sidebar_header_hover_title_color",
+   "fieldtype": "Select",
+   "label": "Hover Title"
+  },
+  {
+   "fieldname": "sidebar_header_hover_subtitle_color",
+   "fieldtype": "Select",
+   "label": "Hover Subtitle"
+  },
+  {
+   "fieldname": "sidebar_middle_icon_color",
+   "fieldtype": "Select",
+   "label": "Icon"
+  },
+  {
+   "fieldname": "sidebar_middle_item_color",
+   "fieldtype": "Select",
+   "label": "Item Text"
+  },
+  {
+   "description": "e.g., shortcut keys",
+   "fieldname": "sidebar_middle_item_suffix_color",
+   "fieldtype": "Select",
+   "label": "Item Suffix"
+  },
+  {
+   "fieldname": "sidebar_header_active_background_color",
+   "fieldtype": "Select",
+   "label": "Active Background"
+  },
+  {
+   "fieldname": "sidebar_header_active_title_color",
+   "fieldtype": "Select",
+   "label": "Active Title"
+  },
+  {
+   "fieldname": "sidebar_header_active_subtitle_color",
+   "fieldtype": "Select",
+   "label": "Active Subtitle"
+  },
+  {
+   "fieldname": "sidebar_header_background_color",
+   "fieldtype": "Select",
+   "label": "Background"
+  },
+  {
+   "fieldname": "sidebar_footer_background_color",
+   "fieldtype": "Select",
+   "label": "Background"
+  },
+  {
+   "fieldname": "sidebar_footer_title_color",
+   "fieldtype": "Select",
+   "label": "Title"
+  },
+  {
+   "fieldname": "sidebar_footer_subtitle_color",
+   "fieldtype": "Select",
+   "label": "Subtitle"
+  },
+  {
+   "fieldname": "sidebar_middle_hover_background_color",
+   "fieldtype": "Select",
+   "label": "Hover Background"
+  },
+  {
+   "fieldname": "sidebar_middle_hover_icon_color",
+   "fieldtype": "Select",
+   "label": "Hover Icon"
+  },
+  {
+   "fieldname": "sidebar_middle_hover_item_color",
+   "fieldtype": "Select",
+   "label": "Hover Item Text"
+  },
+  {
+   "fieldname": "sidebar_middle_hover_item_suffix_color",
+   "fieldtype": "Select",
+   "label": "Hover Item Suffix"
+  },
+  {
+   "fieldname": "sidebar_middle_active_background_color",
+   "fieldtype": "Select",
+   "label": "Active Background"
+  },
+  {
+   "fieldname": "sidebar_middle_active_icon_color",
+   "fieldtype": "Select",
+   "label": "Active Icon"
+  },
+  {
+   "fieldname": "sidebar_middle_active_item_color",
+   "fieldtype": "Select",
+   "label": "Active Item Text"
+  },
+  {
+   "fieldname": "sidebar_middle_active_item_suffix_color",
+   "fieldtype": "Select",
+   "label": "Active Item Suffix"
+  },
+  {
+   "fieldname": "sidebar_footer_hover_background_color",
+   "fieldtype": "Select",
+   "label": "Hover Background"
+  },
+  {
+   "fieldname": "sidebar_footer_hover_title_color",
+   "fieldtype": "Select",
+   "label": "Hover Title"
+  },
+  {
+   "fieldname": "sidebar_footer_hover_subtitle_color",
+   "fieldtype": "Select",
+   "label": "Hover Subtitle"
+  },
+  {
+   "fieldname": "navbar_icon_color",
+   "fieldtype": "Select",
+   "label": "Icon"
+  },
+  {
+   "fieldname": "column_break_nqbi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "nabar_breadcrumb_color",
+   "fieldtype": "Select",
+   "label": "Breadcrumb"
+  },
+  {
+   "fieldname": "navbar_title_color",
+   "fieldtype": "Select",
+   "label": "Title"
+  },
+  {
+   "fieldname": "column_break_cxmb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "html_nomi",
+   "fieldtype": "HTML"
+  }
+ ],
+ "grid_page_length": 50,
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-03 05:09:33.289934",
+ "modified_by": "Administrator",
+ "module": "Vibe",
+ "name": "Vibe Theme",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
