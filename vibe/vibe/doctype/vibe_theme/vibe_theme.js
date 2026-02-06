@@ -10,6 +10,27 @@ frappe.ui.form.on( "Vibe Theme", {
     	    const value = $( this ).val();
 	        console.log('Color changed:', value);
 	    } );
+
+		if( ! frm.is_new() ){
+			frm.add_custom_button( __( "Export" ), async() => {
+				frappe.call( {
+					method: "export_theme",
+					doc: frm.doc, // calls the method on THIS document
+					callback: ( r ) => {
+						if( ! r.message ){
+							frappe.msgprint( __( "No export data returned." ) );
+							return;
+						}
+
+						// r.message should be JSON serializable (dict/list)
+						download_json_file(
+							r.message,
+							`${filename_safe_theme_name( frm.doc.name )}.json`
+						);
+					},
+				} );
+			} );
+		}
 	},
 
     before_save: function( frm ){
@@ -64,3 +85,30 @@ frappe.ui.form.on( "Vibe Palette", {
 		frm.events.update_color_options( frm );
     }
 } );
+
+function download_json_file( data, filename ){
+	const jsonStr = JSON.stringify( data, null, 2 );
+	const blob = new Blob( [ jsonStr ], { type: "application/json" } );
+	const url = window.URL.createObjectURL( blob );
+
+	const a = document.createElement( "a" );
+	a.href = url;
+	a.download = filename;
+
+	document.body.appendChild( a );
+	a.click();
+
+	a.remove();
+	window.URL.revokeObjectURL( url );
+}
+
+function filename_safe_theme_name( theme_name ){
+  return ( theme_name || "" )
+    .toString()
+    .trim()
+    .toLowerCase()
+    .replace( /\s+/g, "-" )        // spaces -> dashes
+    .replace( /[^a-z0-9-]/g, "" )  // remove special chars
+    .replace( /-+/g, "-" )         // collapse multiple dashes
+    .replace( /^-|-$/g, "" );      // trim leading/trailing dashes
+}

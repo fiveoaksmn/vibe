@@ -18,5 +18,8 @@ def css():
 		theme = frappe.get_doc( "Vibe Theme", row.name )
 		css_content += theme.get_css( minify=minify )
 
+	# Address defect in which the "Light", "Dark", and "Automatic" theme previews have the navbar inheriting the currently selected theme
+	css_content += ".theme-grid div[data-theme=\"light\"] .navbar{background-color: #ededed !important;} .theme-grid div[data-theme=\"dark\"] .navbar{background-color: black !important;}"
+
 	# Use Werkzeug Response to bypass JSON handling
 	return Response( css_content, mimetype="text/css" )

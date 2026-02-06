@@ -1,0 +1,74 @@
+{
+  "name": "Patriotic",
+  "description": null,
+  "palette": [
+    {
+      "name": "Blue",
+      "color": "#19226d"
+    },
+    {
+      "name": "Red",
+      "color": "#ab121b"
+    },
+    {
+      "name": "Red Hover",
+      "color": "#8a1018"
+    },
+    {
+      "name": "White",
+      "color": "#ffffff"
+    },
+    {
+      "name": "Black",
+      "color": "#000000"
+    },
+    {
+      "name": "Gray ",
+      "color": "#888888"
+    },
+    {
+      "name": "Light Gray",
+      "color": "#f2f2f2"
+    }
+  ],
+  "core": {
+    "background_color": "White"
+  },
+  "navbar": {
+    "background_color": "Red",
+    "icon_color": "White",
+    "title_color": "White"
+  },
+  "nabar": {
+    "breadcrumb_color": "White"
+  },
+  "sidebar": {
+    "background_color": "Blue",
+    "header_background_color": "Blue",
+    "header_title_color": "White",
+    "header_subtitle_color": "Light Gray",
+    "header_hover_background_color": "Red",
+    "header_hover_title_color": "White",
+    "header_hover_subtitle_color": "Light Gray",
+    "header_active_background_color": "Red",
+    "header_active_title_color": "White",
+    "header_active_subtitle_color": "Light Gray",
+    "middle_icon_color": "White",
+    "middle_item_color": "White",
+    "middle_item_suffix_color": "Light Gray",
+    "middle_hover_background_color": "Red",
+    "middle_hover_icon_color": "White",
+    "middle_hover_item_color": "White",
+    "middle_hover_item_suffix_color": "Light Gray",
+    "middle_active_background_color": "Red",
+    "middle_active_icon_color": "White",
+    "middle_active_item_color": "White",
+    "middle_active_item_suffix_color": "Light Gray",
+    "footer_background_color": "Blue",
+    "footer_title_color": "White",
+    "footer_subtitle_color": "Light Gray",
+    "footer_hover_background_color": "Red",
+    "footer_hover_title_color": "White",
+    "footer_hover_subtitle_color": "Light Gray"
+  }
+}

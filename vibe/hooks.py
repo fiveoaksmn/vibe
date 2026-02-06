@@ -86,8 +86,8 @@ app_include_js = "/assets/vibe/js/vibe.js"
 # ------------
 
 # before_install = "vibe.install.before_install"
-# after_install = "vibe.install.after_install"
-# after_migrate = "vibe.install.after_migrate"
+after_install = "vibe.setup.after_install"
+after_migrate = "vibe.setup.after_migrate"
 
 # Uninstallation
 # ------------

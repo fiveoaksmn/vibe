@@ -1,0 +1,74 @@
+{
+  "name": "Evergreen",
+  "description": null,
+  "palette": [
+    {
+      "name": "beige",
+      "color": "#F6F2EA"
+    },
+    {
+      "name": "ivory",
+      "color": "#FFFCF6"
+    },
+    {
+      "name": "deep-pine",
+      "color": "#2F3A34"
+    },
+    {
+      "name": "parchment",
+      "color": "#E7E1D6"
+    },
+    {
+      "name": "muted-green",
+      "color": "#3D4B43"
+    },
+    {
+      "name": "sage",
+      "color": "#6F7E5C"
+    },
+    {
+      "name": "clay",
+      "color": "#A46A4A"
+    }
+  ],
+  "core": {
+    "background_color": null
+  },
+  "navbar": {
+    "background_color": null,
+    "icon_color": null,
+    "title_color": null
+  },
+  "nabar": {
+    "breadcrumb_color": null
+  },
+  "sidebar": {
+    "background_color": "deep-pine",
+    "header_background_color": null,
+    "header_title_color": "ivory",
+    "header_subtitle_color": "beige",
+    "header_hover_background_color": "muted-green",
+    "header_hover_title_color": null,
+    "header_hover_subtitle_color": null,
+    "header_active_background_color": null,
+    "header_active_title_color": null,
+    "header_active_subtitle_color": null,
+    "middle_icon_color": "parchment",
+    "middle_item_color": "parchment",
+    "middle_item_suffix_color": "parchment",
+    "middle_hover_background_color": "muted-green",
+    "middle_hover_icon_color": null,
+    "middle_hover_item_color": null,
+    "middle_hover_item_suffix_color": null,
+    "middle_active_background_color": "sage",
+    "middle_active_icon_color": null,
+    "middle_active_item_color": null,
+    "middle_active_item_suffix_color": null,
+    "footer_background_color": null,
+    "footer_title_color": "ivory",
+    "footer_subtitle_color": null,
+    "footer_hover_background_color": "muted-green",
+    "footer_hover_title_color": null,
+    "footer_hover_subtitle_color": null
+  }
+}

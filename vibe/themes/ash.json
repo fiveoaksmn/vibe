@@ -1,0 +1,82 @@
+{
+  "name": "Ash",
+  "description": "Hello World!",
+  "palette": [
+    {
+      "name": "apricot",
+      "color": "#ffa00a"
+    },
+    {
+      "name": "slate",
+      "color": "#36414c"
+    },
+    {
+      "name": "steel-gray",
+      "color": "#68737e"
+    },
+    {
+      "name": "white",
+      "color": "#ffffff"
+    },
+    {
+      "name": "black",
+      "color": "#000000"
+    },
+    {
+      "name": "light-gray",
+      "color": "#cccccc"
+    },
+    {
+      "name": "bright-red",
+      "color": "#f0a8a8"
+    },
+    {
+      "name": "bright-yellow",
+      "color": "#f7ee3e"
+    },
+    {
+      "name": "dark-gray",
+      "color": "#666666"
+    }
+  ],
+  "core": {
+    "background_color": ""
+  },
+  "navbar": {
+    "background_color": "steel-gray",
+    "icon_color": "white",
+    "title_color": "white"
+  },
+  "nabar": {
+    "breadcrumb_color": "light-gray"
+  },
+  "sidebar": {
+    "background_color": "slate",
+    "header_background_color": "",
+    "header_title_color": "white",
+    "header_subtitle_color": "light-gray",
+    "header_hover_background_color": "apricot",
+    "header_hover_title_color": "black",
+    "header_hover_subtitle_color": "dark-gray",
+    "header_active_background_color": null,
+    "header_active_title_color": null,
+    "header_active_subtitle_color": null,
+    "middle_icon_color": "white",
+    "middle_item_color": "white",
+    "middle_item_suffix_color": "light-gray",
+    "middle_hover_background_color": "apricot",
+    "middle_hover_icon_color": "black",
+    "middle_hover_item_color": "black",
+    "middle_hover_item_suffix_color": "dark-gray",
+    "middle_active_background_color": "white",
+    "middle_active_icon_color": "apricot",
+    "middle_active_item_color": "apricot",
+    "middle_active_item_suffix_color": "dark-gray",
+    "footer_background_color": "",
+    "footer_title_color": "white",
+    "footer_subtitle_color": "light-gray",
+    "footer_hover_background_color": "apricot",
+    "footer_hover_title_color": "black",
+    "footer_hover_subtitle_color": "dark-gray"
+  }
+}

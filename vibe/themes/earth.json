@@ -1,0 +1,66 @@
+{
+  "name": "Earth",
+  "description": null,
+  "palette": [
+    {
+      "name": "Brown",
+      "color": "#947352"
+    },
+    {
+      "name": "Green",
+      "color": "#709360"
+    },
+    {
+      "name": "White Color",
+      "color": "#f2e8e4"
+    },
+    {
+      "name": "Light Gray Color",
+      "color": "#e3cabf"
+    },
+    {
+      "name": "Dark Brown",
+      "color": "#231b14"
+    }
+  ],
+  "core": {
+    "background_color": "White Color"
+  },
+  "navbar": {
+    "background_color": "Green",
+    "icon_color": "Dark Brown",
+    "title_color": "Dark Brown"
+  },
+  "nabar": {
+    "breadcrumb_color": "Dark Brown"
+  },
+  "sidebar": {
+    "background_color": "Green",
+    "header_background_color": "Green",
+    "header_title_color": "Dark Brown",
+    "header_subtitle_color": "White Color",
+    "header_hover_background_color": "Brown",
+    "header_hover_title_color": "White Color",
+    "header_hover_subtitle_color": "Light Gray Color",
+    "header_active_background_color": "Dark Brown",
+    "header_active_title_color": "White Color",
+    "header_active_subtitle_color": "Light Gray Color",
+    "middle_icon_color": "Dark Brown",
+    "middle_item_color": "Dark Brown",
+    "middle_item_suffix_color": "Light Gray Color",
+    "middle_hover_background_color": "Brown",
+    "middle_hover_icon_color": "White Color",
+    "middle_hover_item_color": "White Color",
+    "middle_hover_item_suffix_color": "Light Gray Color",
+    "middle_active_background_color": "Dark Brown",
+    "middle_active_icon_color": "White Color",
+    "middle_active_item_color": "White Color",
+    "middle_active_item_suffix_color": "Light Gray Color",
+    "footer_background_color": "Green",
+    "footer_title_color": "Dark Brown",
+    "footer_subtitle_color": "Light Gray Color",
+    "footer_hover_background_color": "Brown",
+    "footer_hover_title_color": "White Color",
+    "footer_hover_subtitle_color": "Light Gray Color"
+  }
+}

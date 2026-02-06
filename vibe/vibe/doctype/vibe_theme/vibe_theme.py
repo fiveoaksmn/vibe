@@ -2,17 +2,56 @@
 # For license information, please see license.txt
 
 import frappe
+from frappe import _
 from frappe.model.document import Document
+from frappe.query_builder.functions import Lower
+from vibe.controllers.theme import sync_themes
 import re
 import unicodedata
 
 
 class VibeTheme( Document ):
+	color_selects = [
+		"core_background_color",
+		"navbar_background_color", "navbar_icon_color", "nabar_breadcrumb_color", "navbar_title_color",
+		"sidebar_background_color", "sidebar_header_background_color", "sidebar_header_title_color",
+		"sidebar_header_subtitle_color", "sidebar_header_hover_background_color",
+		"sidebar_header_hover_title_color", "sidebar_header_hover_subtitle_color",
+		"sidebar_header_active_background_color", "sidebar_header_active_title_color",
+		"sidebar_header_active_subtitle_color", "sidebar_middle_icon_color", "sidebar_middle_item_color",
+		"sidebar_middle_item_suffix_color", "sidebar_middle_hover_background_color",
+		"sidebar_middle_hover_icon_color", "sidebar_middle_hover_item_color",
+		"sidebar_middle_hover_item_suffix_color", "sidebar_middle_active_background_color",
+		"sidebar_middle_active_icon_color", "sidebar_middle_active_item_color",
+		"sidebar_middle_active_item_suffix_color", "sidebar_footer_background_color", "sidebar_footer_title_color",
+		"sidebar_footer_subtitle_color", "sidebar_footer_hover_background_color",
+		"sidebar_footer_hover_title_color", "sidebar_footer_hover_subtitle_color"
+	]
+
 	def validate( self ):
+		# Three default Frappe themes not allowed
 		if self.theme_title.lower() in [ "light", "dark", "automatic" ]:
 			frappe.throw( f"Theme title '{self.theme_title}' is reserved." )
 
-		self.theme_code = self.sanitize_name( self.theme_title )
+		# No special characters in title
+		if not re.fullmatch( r"[A-Za-z0-9\- ]+", self.theme_title ):
+			frappe.throw( _( "The title can only contain letters, numbers, spaces, and dashes." ) )
+
+		# Make sure the title wasn't used already
+		vibeTheme = frappe.qb.DocType( "Vibe Theme" )
+		qb = (
+			frappe.qb.from_( vibeTheme )
+			.select( vibeTheme.name )
+			.where( Lower( vibeTheme.theme_title ) == self.theme_title.lower() )
+		)
+		if not self.is_new():
+			qb = qb.where( vibeTheme.name != self.name )
+		if len( qb.run() ) > 0:
+			frappe.throw( _( "A theme with this title already exists." ) )
+
+
+	def on_update( self ):
+		sync_themes()
 
 
 	def get_css( self, minify=True ):
@@ -262,3 +301,26 @@ class VibeTheme( Document ):
 			value = f"v-{value}"
 
 		return value
+
+
+	# Provide JSON
+	@frappe.whitelist()
+	def export_theme( self ):
+		theme = { "name": self.name, "description": self.description, "palette": [] }
+
+		for row in self.palette:
+			theme[ "palette" ].append( { "name": row.color_name, "color": row.color } )
+
+		for select in self.color_selects:
+			group, rest = select.split( "_", 1 )  # split only on first underscore
+
+			# Get the value from the document (works for Frappe DocTypes)
+			value = self.get( select )
+
+			# Ensure group exists
+			theme.setdefault( group, { } )
+
+			# Store
+			theme[ group ][ rest ] = value
+
+		return theme

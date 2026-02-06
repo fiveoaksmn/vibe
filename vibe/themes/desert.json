@@ -1,0 +1,74 @@
+{
+  "name": "Desert",
+  "description": null,
+  "palette": [
+    {
+      "name": "linen",
+      "color": "#F8F1E5"
+    },
+    {
+      "name": "floral-white",
+      "color": "#FFF9F0"
+    },
+    {
+      "name": "beige",
+      "color": "#E0D2BF"
+    },
+    {
+      "name": "dark-brown",
+      "color": "#3B332B"
+    },
+    {
+      "name": "light-grayish-orange",
+      "color": "#EFE3D3"
+    },
+    {
+      "name": "dark-grayish-orange",
+      "color": "#4A4036"
+    },
+    {
+      "name": "terracotta",
+      "color": "#C06D3B"
+    }
+  ],
+  "core": {
+    "background_color": null
+  },
+  "navbar": {
+    "background_color": "beige",
+    "icon_color": null,
+    "title_color": null
+  },
+  "nabar": {
+    "breadcrumb_color": null
+  },
+  "sidebar": {
+    "background_color": "dark-brown",
+    "header_background_color": null,
+    "header_title_color": "floral-white",
+    "header_subtitle_color": "linen",
+    "header_hover_background_color": "dark-grayish-orange",
+    "header_hover_title_color": null,
+    "header_hover_subtitle_color": null,
+    "header_active_background_color": "terracotta",
+    "header_active_title_color": "dark-brown",
+    "header_active_subtitle_color": "dark-brown",
+    "middle_icon_color": "light-grayish-orange",
+    "middle_item_color": "light-grayish-orange",
+    "middle_item_suffix_color": "light-grayish-orange",
+    "middle_hover_background_color": "dark-grayish-orange",
+    "middle_hover_icon_color": null,
+    "middle_hover_item_color": null,
+    "middle_hover_item_suffix_color": null,
+    "middle_active_background_color": "terracotta",
+    "middle_active_icon_color": "dark-brown",
+    "middle_active_item_color": "dark-brown",
+    "middle_active_item_suffix_color": null,
+    "footer_background_color": null,
+    "footer_title_color": "floral-white",
+    "footer_subtitle_color": "linen",
+    "footer_hover_background_color": "dark-grayish-orange",
+    "footer_hover_title_color": null,
+    "footer_hover_subtitle_color": null
+  }
+}

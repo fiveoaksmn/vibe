@@ -1,0 +1,62 @@
+{
+  "name": "Pulse",
+  "description": null,
+  "palette": [
+    {
+      "name": "Hot Pink",
+      "color": "#eb1cb7"
+    },
+    {
+      "name": "White",
+      "color": "#ffffff"
+    },
+    {
+      "name": "Light Gray",
+      "color": "#f2f2f2"
+    },
+    {
+      "name": "Hot Pink Hover",
+      "color": "#bf0091"
+    }
+  ],
+  "core": {
+    "background_color": "White"
+  },
+  "navbar": {
+    "background_color": "Hot Pink",
+    "icon_color": "White",
+    "title_color": "White"
+  },
+  "nabar": {
+    "breadcrumb_color": "White"
+  },
+  "sidebar": {
+    "background_color": "Hot Pink",
+    "header_background_color": "Hot Pink",
+    "header_title_color": "White",
+    "header_subtitle_color": "Light Gray",
+    "header_hover_background_color": "Hot Pink Hover",
+    "header_hover_title_color": "White",
+    "header_hover_subtitle_color": "Light Gray",
+    "header_active_background_color": "White",
+    "header_active_title_color": "Hot Pink",
+    "header_active_subtitle_color": "Hot Pink",
+    "middle_icon_color": "White",
+    "middle_item_color": "White",
+    "middle_item_suffix_color": "Hot Pink Hover",
+    "middle_hover_background_color": "Hot Pink Hover",
+    "middle_hover_icon_color": "White",
+    "middle_hover_item_color": "White",
+    "middle_hover_item_suffix_color": "Light Gray",
+    "middle_active_background_color": "White",
+    "middle_active_icon_color": "Hot Pink",
+    "middle_active_item_color": "Hot Pink",
+    "middle_active_item_suffix_color": "Hot Pink",
+    "footer_background_color": "Hot Pink",
+    "footer_title_color": "White",
+    "footer_subtitle_color": "Light Gray",
+    "footer_hover_background_color": "Hot Pink Hover",
+    "footer_hover_title_color": "White",
+    "footer_hover_subtitle_color": "Light Gray"
+  }
+}
