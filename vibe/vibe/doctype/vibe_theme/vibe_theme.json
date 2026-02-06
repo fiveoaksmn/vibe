@@ -8,12 +8,18 @@
  "field_order": [
   "section_main",
   "theme_title",
-  "theme_code",
-  "disabled",
   "description",
+  "disabled",
   "published",
+  "protect",
   "section_palette",
   "palette",
+  "core_section",
+  "core_background_color",
+  "column_break_havx",
+  "html_ykhg",
+  "column_break_luca",
+  "html_hyci",
   "section_navbar",
   "navbar_background_color",
   "navbar_icon_color",
@@ -24,6 +30,10 @@
   "html_nomi",
   "section_sidebar",
   "sidebar_background_color",
+  "column_break_uxbo",
+  "html_azvu",
+  "column_break_txrn",
+  "html_lagm",
   "section_break_axck",
   "sidebar_header_column",
   "sidebar_header_background_color",
@@ -80,6 +90,7 @@
    "options": "Vibe Palette"
   },
   {
+   "bold": 1,
    "fieldname": "section_navbar",
    "fieldtype": "Section Break",
    "label": "Navbar"
@@ -96,13 +107,7 @@
    "label": "Disabled"
   },
   {
-   "fieldname": "theme_code",
-   "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Code",
-   "no_copy": 1
-  },
-  {
+   "bold": 1,
    "fieldname": "section_sidebar",
    "fieldtype": "Section Break",
    "hide_border": 1,
@@ -301,13 +306,62 @@
   {
    "fieldname": "html_nomi",
    "fieldtype": "HTML"
+  },
+  {
+   "bold": 1,
+   "fieldname": "core_section",
+   "fieldtype": "Section Break",
+   "label": "Core"
+  },
+  {
+   "fieldname": "core_background_color",
+   "fieldtype": "Select",
+   "label": "Background Color"
+  },
+  {
+   "fieldname": "column_break_havx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "html_ykhg",
+   "fieldtype": "HTML"
+  },
+  {
+   "fieldname": "column_break_luca",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "html_hyci",
+   "fieldtype": "HTML"
+  },
+  {
+   "fieldname": "column_break_uxbo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "html_azvu",
+   "fieldtype": "HTML"
+  },
+  {
+   "fieldname": "column_break_txrn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "html_lagm",
+   "fieldtype": "HTML"
+  },
+  {
+   "default": "0",
+   "description": "Don't allow updates to overwrite any changes.",
+   "fieldname": "protect",
+   "fieldtype": "Check",
+   "label": "Protect"
   }
  ],
  "grid_page_length": 50,
- "hide_toolbar": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-02-03 05:09:33.289934",
+ "modified": "2026-02-06 16:58:48.663713",
  "modified_by": "Administrator",
  "module": "Vibe",
  "name": "Vibe Theme",

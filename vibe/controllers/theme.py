@@ -2,6 +2,45 @@ import frappe
 from frappe.query_builder.functions import Lower
 
 
+@frappe.whitelist()
+def switch_theme( theme ):
+	vibeTheme = frappe.qb.DocType( "Vibe Theme" )
+	qb = (
+		frappe.qb.from_( vibeTheme )
+		.select( vibeTheme.theme_title )
+		.where( vibeTheme.disabled == 0 )
+		.where( Lower( vibeTheme.theme_title ) == theme.lower() )
+	)
+
+	# Published only if the user is not a developer
+	if "System Manager" not in frappe.get_roles( frappe.session.user ):
+		qb = qb.where( vibeTheme.published == 1 )
+
+	rows = qb.run( as_dict=True )
+	if len( rows ) > 0:
+		frappe.db.set_value( "User", frappe.session.user, "desk_theme", rows[ 0 ].theme_title )
+
+
+@frappe.whitelist()
+def list():
+	vibeTheme = frappe.qb.DocType( "Vibe Theme" )
+	qb = (
+		frappe.qb.from_( vibeTheme )
+		.select( Lower( vibeTheme.theme_title ).as_( "name" ), vibeTheme.theme_title.as_( "label" ), vibeTheme.description.as_( "info" ) )
+		.where( vibeTheme.disabled == 0 )
+	)
+
+	# Published only if the user is not a developer
+	if "System Manager" not in frappe.get_roles( frappe.session.user ):
+		qb = qb.where( vibeTheme.published == 1 )
+
+	rows = qb.run( as_dict=True )
+
+	return {
+		"themes": rows
+	}
+
+
 def sync_themes():
 	vibeTheme = frappe.qb.DocType( "Vibe Theme" )
 	qb = (

@@ -3,7 +3,7 @@ name = "vibe"
 authors = [
     { name = "Five Oaks, Inc", email = "frappe@fiveoaksinc.com"}
 ]
-description = "Vibe allows administrators to create and manage custom themes for their Frappe/ERPNext v16 environment, giving complete control over colors, styles, and the overall look and feel of the interface."
+description = "Vibe lets you control the system’s vibe—through ambient messaging and customizable theming. Broadcast announcements, display sticky banners, or show login-time notices to keep users informed about things like system restarts, company events, or weather alerts. Customize the look and feel of the interface to match the message, creating a cohesive experience that feels intentional, not noisy. Vibe keeps everyone aligned by combining communication and visual tone into a single, shared layer."
 requires-python = ">=3.14"
 readme = "README.md"
 dynamic = ["version"]

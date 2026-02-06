@@ -1,7 +1,7 @@
 app_name = "vibe"
 app_title = "Vibe"
 app_publisher = "Five Oaks, Inc"
-app_description = "Vibe allows administrators to create and manage custom themes for their Frappe/ERPNext v16 environment, giving complete control over colors, styles, and the overall look and feel of the interface."
+app_description = "Vibe lets you control the system’s vibe—through ambient messaging and customizable theming. Broadcast announcements, display sticky banners, or show login-time notices to keep users informed about things like system restarts, company events, or weather alerts. Customize the look and feel of the interface to match the message, creating a cohesive experience that feels intentional, not noisy. Vibe keeps everyone aligned by combining communication and visual tone into a single, shared layer."
 app_email = "frappe@fiveoaksinc.com"
 app_license = "mit"
 
@@ -178,10 +178,10 @@ after_migrate = "vibe.setup.after_migrate"
 # Overriding Methods
 # ------------------------------
 #
-# override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "vibe.event.get_events"
-# }
-#
+override_whitelisted_methods = {
+	"frappe.core.doctype.user.user.switch_theme": "vibe.controllers.theme.switch_theme"
+}
+
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps

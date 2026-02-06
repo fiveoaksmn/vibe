@@ -57,16 +57,27 @@ class VibeTheme( Document ):
 	def get_css( self, minify=True ):
 		css = self.generate_palette( minify=minify )
 
+		### CORE
+
+		# Page Background (desktop bakground and grid footer is below child tables)
+		css += self.generate_selector( [ "body", ".std-form-layout > .form-layout > .form-page", ".desktop-container", ".grid-footer" ], [ { "property": "background-color", "value": "${{core_background_color}}", "important": True } ], minify=minify )
+
+
 		### NAVBAR
 
 		# Navbar Background
 		css += self.generate_selector( [ ".page-head-content", ".navbar" ], [ { "property": "background-color", "value": "${{navbar_background_color}}", "important": True } ], minify=minify )
 
 		# Navbar Icon
-		css += self.generate_selector( [ ".navbar-breadcrumbs > li > a > svg" ], [ { "property": "color", "value": "${{navbar_icon_color}}", "important": True }, { "property": "stroke", "value": "${{navbar_icon_color}}" } ], minify=minify )
+		css += self.generate_selector( [ ".navbar-breadcrumbs > li > a > svg", ".sidebar-toggle-icon svg", ".sidebar-toggle-btn svg" ], [ { "property": "color", "value": "${{navbar_icon_color}}", "important": True }, { "property": "stroke", "value": "${{navbar_icon_color}}" } ], minify=minify )
+
+		# Navbar Toggle Icon Hovered
+		css += self.generate_selector( [ ".sidebar-toggle-icon:hover .es-icon" ], [ { "property": "fill", "value": "${{navbar_icon_color}}", "important": True }, { "property": "stroke", "value": "${{navbar_icon_color}}" } ], minify=minify )
 
 		# Navbar Breadcrumbs
-		css += self.generate_selector( [ ".navbar-breadcrumbs > li > a:not(.disabled)" ], [ { "property": "color", "value": "${{nabar_breadcrumb_color}}" } ], minify=minify )
+		css += self.generate_selector( [ ".navbar-breadcrumbs > li > a:not(.disabled)", ".navbar-breadcrumbs li.ellipsis" ], [ { "property": "color", "value": "${{nabar_breadcrumb_color}}" } ], minify=minify )
+
+		# .navbar-breadcrumbs a::before
 
 		# Navbar Page Title
 		css += self.generate_selector( [ ".navbar-breadcrumbs > li > a.disabled" ], [ { "property": "color", "value": "${{navbar_title_color}}" } ], minify=minify )
@@ -118,13 +129,13 @@ class VibeTheme( Document ):
 		css += self.generate_selector( [ ".body-sidebar .standard-sidebar-item:not(.active-sidebar):has(a:not(.section-break)):hover" ], [ { "property": "background-color", "value": "${{sidebar_middle_hover_background_color}}" } ], minify=minify )
 
 		# Sidebar Middle: Hover Icon
-		css += self.generate_selector( [ ".standard-sidebar-item:not(.active-sidebar):hover svg", ".collapse-sidebar-link:hover svg" ], [ { "property": "color", "value": "${{sidebar_middle_hover_icon_color}}" }, { "property": "stroke", "value": "${{sidebar_middle_hover_icon_color}}" } ], minify=minify )
+		css += self.generate_selector( [ ".standard-sidebar-item:not(.active-sidebar):hover a usvg", ".collapse-sidebar-link:hover svg" ], [ { "property": "color", "value": "${{sidebar_middle_hover_icon_color}}" }, { "property": "stroke", "value": "${{sidebar_middle_hover_icon_color}}" } ], minify=minify )
 
 		# Sidebar Middle: Hover Item
-		css += self.generate_selector( [ ".standard-sidebar-item:not(.active-sidebar):hover .sidebar-item-label" ], [ { "property": "color", "value": "${{sidebar_middle_hover_item_color}}" } ], minify=minify )
+		css += self.generate_selector( [ ".standard-sidebar-item:not(.active-sidebar):hover a .sidebar-item-label" ], [ { "property": "color", "value": "${{sidebar_middle_hover_item_color}}" } ], minify=minify )
 
 		# Sidebar Middle: Hover Item Suffix
-		css += self.generate_selector( [ ".standard-sidebar-item:not(.active-sidebar):hover .sidebar-item-suffix .keyboard-shortcut", ".collapse-sidebar-link:hover" ], [ { "property": "color", "value": "${{sidebar_middle_hover_item_suffix_color}}" } ], minify=minify )
+		css += self.generate_selector( [ ".standard-sidebar-item:not(.active-sidebar):hover a .sidebar-item-suffix .keyboard-shortcut", ".collapse-sidebar-link:hover" ], [ { "property": "color", "value": "${{sidebar_middle_hover_item_suffix_color}}" } ], minify=minify )
 
 		# Sidebar Middle: Active Background
 		css += self.generate_selector( [ ".active-sidebar" ], [ { "property": "background-color", "value": "${{sidebar_middle_active_background_color}}" } ], minify=minify )
@@ -170,9 +181,12 @@ class VibeTheme( Document ):
 
 		### Theme Preview
 
-		css += self.generate_selector( [ ".theme-grid div[data-theme='" + self.theme_code + "'] .background" ], [ { "property": "background-color", "value": "white", "important": True } ], minify=minify, theme_selector=False )
-		css += self.generate_selector( [ ".theme-grid div[data-theme='" + self.theme_code + "'] .navbar" ], [ { "property": "background-color", "value": "${{navbar_background_color}}", "important": True } ], minify=minify, theme_selector=False )
-		css += self.generate_selector( [ ".theme-grid div[data-theme='" + self.theme_code + "'] .toolbar > .text" ], [ { "property": "background-color", "value": "${{sidebar_background_color}}", "important": True } ], minify=minify, theme_selector=False )
+		css += self.generate_selector( [ ".theme-grid div[data-theme='" + self.theme_title.lower() + "'] .background" ], [ { "property": "background-color", "value": "${{core_background_color}}", "important": True } ], minify=minify, theme_selector=False )
+		if self.navbar_background_color is not None:
+			css += self.generate_selector( [ ".theme-grid div[data-theme='" + self.theme_title.lower() + "'] .navbar" ], [ { "property": "background-color", "value": "${{navbar_background_color}}", "important": True } ], minify=minify, theme_selector=False )
+		else:
+			css += self.generate_selector( [ ".theme-grid div[data-theme='" + self.theme_title.lower() + "'] .navbar" ], [ { "property": "background-color", "value": "#ededed", "important": True } ], minify=minify, theme_selector=False )
+		css += self.generate_selector( [ ".theme-grid div[data-theme='" + self.theme_title.lower() + "'] .toolbar > .text" ], [ { "property": "background-color", "value": "${{sidebar_background_color}}", "important": True } ], minify=minify, theme_selector=False )
 
 		return css
 
@@ -185,7 +199,8 @@ class VibeTheme( Document ):
 		lines = [ ]
 
 		# Use quotes for data-theme to be safe
-		theme_selector = f'[data-theme="{self.theme_code}"]'
+		theme_code = self.theme_title.lower()
+		theme_selector = f'[data-theme="{theme_code}"]'
 
 		# Opening bracket
 		if minify:
@@ -221,7 +236,8 @@ class VibeTheme( Document ):
 
 		# Prepend the theme selector to every selector
 		if theme_selector:
-			theme_selector = f'[data-theme="{self.theme_code}"]'
+			theme_code = self.theme_title.lower()
+			theme_selector = f'[data-theme="{theme_code}"]'
 			scoped_selectors = [ f"{theme_selector} {s}" for s in selectors ]
 		else:
 			scoped_selectors = selectors

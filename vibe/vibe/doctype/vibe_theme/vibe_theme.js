@@ -55,6 +55,7 @@ frappe.ui.form.on( "Vibe Theme", {
 		}
 
 		const fields = [
+			"core_background_color",
 			"navbar_background_color", "navbar_icon_color", "nabar_breadcrumb_color", "navbar_title_color",
 			"sidebar_background_color",
 			"sidebar_header_background_color", "sidebar_header_title_color", "sidebar_header_subtitle_color", "sidebar_header_hover_background_color", "sidebar_header_hover_title_color", "sidebar_header_hover_subtitle_color", "sidebar_header_active_background_color", "sidebar_header_active_title_color", "sidebar_header_active_subtitle_color",
