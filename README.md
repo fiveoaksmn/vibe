@@ -1,6 +1,6 @@
 ### Vibe
 
-Vibe allows administrators to create and manage custom themes for their Frappe/ERPNext v16 environment, giving complete control over colors, styles, and the overall look and feel of the interface.
+Vibe lets you control the system’s vibe—through ambient messaging and customizable theming. Customize the look and feel of the interface to match the message, creating a cohesive experience that feels intentional, not noisy. Vibe keeps everyone aligned by combining communication and visual tone into a single, shared layer.
 
 ### Installation
 
@@ -11,22 +11,6 @@ cd $PATH_TO_YOUR_BENCH
 bench get-app $URL_OF_THIS_REPO --branch deploy
 bench install-app vibe
 ```
-
-### Contributing
-
-This app uses `pre-commit` for code formatting and linting. Please [install pre-commit](https://pre-commit.com/#installation) and enable it for this repository:
-
-```bash
-cd apps/vibe
-pre-commit install
-```
-
-Pre-commit is configured to use the following tools for checking and formatting your code:
-
-- ruff
-- eslint
-- prettier
-- pyupgrade
 
 ### License
 
