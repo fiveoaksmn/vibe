@@ -94,6 +94,8 @@ def import_theme( theme_json ):
 	except frappe.DoesNotExistError:
 		doc = frappe.new_doc( "Vibe Theme" )
 		doc.theme_title = theme_json[ "name" ]
+		doc.published = 1
+		doc.disabled = 0
 		changes = True
 
 	# Don't continue if protected
@@ -136,6 +138,7 @@ def import_theme( theme_json ):
 		row = doc.palette[ i ]
 		if row.get( "color_name" ) not in verified:
 			doc.palette.pop( i )
+			change = True
 
 	# Helper: resolve palette name -> hex (or keep hex if already hex)
 	def resolve_color( value ):
@@ -163,8 +166,15 @@ def import_theme( theme_json ):
 
 		for key, value in group_values.items():
 			fieldname = f"{group}_{key}"
-			if doc.get( fieldname ) != value:
-				doc.set( fieldname, resolve_color( value ) )
+
+			# What is currently in the doc
+			current = doc.get( fieldname ) or ""
+
+			# What the value is in the theme
+			value = value or ""
+
+			if current != value:
+				doc.set( fieldname, value )
 				changes = True
 
 	if changes:

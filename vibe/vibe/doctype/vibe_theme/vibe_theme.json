@@ -24,7 +24,7 @@
   "navbar_background_color",
   "navbar_icon_color",
   "column_break_nqbi",
-  "nabar_breadcrumb_color",
+  "navbar_breadcrumb_color",
   "navbar_title_color",
   "column_break_cxmb",
   "html_nomi",
@@ -290,7 +290,7 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "nabar_breadcrumb_color",
+   "fieldname": "navbar_breadcrumb_color",
    "fieldtype": "Select",
    "label": "Breadcrumb"
   },

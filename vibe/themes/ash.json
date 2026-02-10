@@ -1,6 +1,6 @@
 {
   "name": "Ash",
-  "description": "Hello World!",
+  "description": null,
   "palette": [
     {
       "name": "apricot",
@@ -44,11 +44,9 @@
   },
   "navbar": {
     "background_color": "steel-gray",
+    "breadcrumb_color": "light-gray",
     "icon_color": "white",
     "title_color": "white"
-  },
-  "nabar": {
-    "breadcrumb_color": "light-gray"
   },
   "sidebar": {
     "background_color": "slate",

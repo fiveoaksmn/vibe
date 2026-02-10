@@ -36,11 +36,9 @@
   },
   "navbar": {
     "background_color": null,
+    "breadcrumb_color": null,
     "icon_color": null,
     "title_color": null
-  },
-  "nabar": {
-    "breadcrumb_color": null
   },
   "sidebar": {
     "background_color": "deep-pine",

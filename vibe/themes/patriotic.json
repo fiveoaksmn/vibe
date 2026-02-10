@@ -36,11 +36,9 @@
   },
   "navbar": {
     "background_color": "Red",
+    "breadcrumb_color": "White",
     "icon_color": "White",
     "title_color": "White"
-  },
-  "nabar": {
-    "breadcrumb_color": "White"
   },
   "sidebar": {
     "background_color": "Blue",

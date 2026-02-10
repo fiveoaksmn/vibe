@@ -28,11 +28,9 @@
   },
   "navbar": {
     "background_color": "Green",
+    "breadcrumb_color": "Dark Brown",
     "icon_color": "Dark Brown",
     "title_color": "Dark Brown"
-  },
-  "nabar": {
-    "breadcrumb_color": "Dark Brown"
   },
   "sidebar": {
     "background_color": "Green",
