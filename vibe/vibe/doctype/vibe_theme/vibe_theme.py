@@ -115,9 +115,8 @@ class VibeTheme( Document ):
 		# Sidebar Header: Active Subtitle
 		css += self.generate_selector( [ ".sidebar-header.active-sidebar .header-subtitle" ], [ { "property": "color", "value": "${{sidebar_header_active_subtitle_color}}" } ], minify=minify )
 
-
 		# Sidebar Middle: Icons
-		css += self.generate_selector( [ ".sidebar-item-icon svg", ".collapse-sidebar-link svg" ], [ { "property": "color", "value": "${{sidebar_middle_icon_color}}" }, { "property": "stroke", "value": "${{sidebar_middle_icon_color}}" } ], minify=minify )
+		css += self.generate_selector( [ ".sidebar-item-icon svg:not(.sidebar-item-icon > .header-logo svg)", ".collapse-sidebar-link svg" ], [ { "property": "color", "value": "${{sidebar_middle_icon_color}}" }, { "property": "stroke", "value": "${{sidebar_middle_icon_color}}" } ], minify=minify )
 
 		# Sidebar Middle: Item
 		css += self.generate_selector( [ ".standard-sidebar-item:not(.active-sidebar) .sidebar-item-label" ], [ { "property": "color", "value": "${{sidebar_middle_item_color}}" } ], minify=minify )
@@ -148,7 +147,6 @@ class VibeTheme( Document ):
 
 		# Sidebar Middle: Active Item Suffix
 		css += self.generate_selector( [ ".active-sidebar .sidebar-item-suffix" ], [ { "property": "color", "value": "${{sidebar_middle_active_item_suffix_color}}" } ], minify=minify )
-
 
 		# Sidebar Footer: Background
 		css += self.generate_selector( [ ".dropdown-navbar-user" ], [ { "property": "background-color", "value": "${{sidebar_footer_background_color}}" }, { "property": "border-radius", "value": "8px", "important": True } ], minify=minify )
