@@ -21,7 +21,7 @@ def switch_theme( theme ):
 		frappe.db.set_value( "User", frappe.session.user, "desk_theme", rows[ 0 ].theme_title )
 
 
-@frappe.whitelist()
+@frappe.whitelist( allow_guest=True )
 def list():
 	vibeTheme = frappe.qb.DocType( "Vibe Theme" )
 	qb = (
@@ -38,6 +38,17 @@ def list():
 
 	return {
 		"themes": rows
+	}
+
+
+@frappe.whitelist( allow_guest=True )
+def sticky_banner():
+	settings = frappe.get_single( "Vibe Settings" )
+	return {
+		"enabled": settings.sticky_banner_enabled,
+		"textColor": settings.sticky_banner_text_color,
+		"backgroundColor": settings.sticky_banner_background_color,
+		"content": settings.sticky_banner_content
 	}
 
 

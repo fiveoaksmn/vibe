@@ -1,0 +1,33 @@
+.global-sticky-banner {
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  padding: 0 10px;
+  flex-shrink: 0;
+	width:100%;
+	text-align:center;
+}
+
+/* Wrapper for the sidebar + main */
+.desk-layout-wrapper {
+	display: flex;
+	flex: 1 1 auto;
+	min-height: 0; /* CRITICAL for scroll behavior */
+	width:100%;
+	height: calc(100vh - 20px);
+}
+
+.body-sidebar-container.sticky { /* left  */
+	flex-shrink: 0;
+	height: calc(100vh - 20px);
+}
+
+.body-sidebar.sticky { /* left also required */
+	height: calc(100vh - 20px);
+}
+
+.main-section.sticky { /* right */
+	height: calc(100vh - 20px);
+	height: 100%;
+	min-height: 0;
+}

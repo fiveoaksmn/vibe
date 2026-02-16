@@ -1,0 +1,74 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-02-16 21:17:52.387282",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_sticky_banner",
+  "sticky_banner_enabled",
+  "sticky_banner_text_color",
+  "sticky_banner_background_color",
+  "sticky_banner_content"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_sticky_banner",
+   "fieldtype": "Section Break",
+   "label": "Sticky Banner"
+  },
+  {
+   "default": "0",
+   "fieldname": "sticky_banner_enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  },
+  {
+   "default": "#990000",
+   "fieldname": "sticky_banner_background_color",
+   "fieldtype": "Color",
+   "label": "Background Color",
+   "mandatory_depends_on": "eval:doc.sticky_banner_enabled"
+  },
+  {
+   "default": "#FFFFFF",
+   "fieldname": "sticky_banner_text_color",
+   "fieldtype": "Color",
+   "label": "Text Color",
+   "mandatory_depends_on": "eval:doc.sticky_banner_enabled"
+  },
+  {
+   "fieldname": "sticky_banner_content",
+   "fieldtype": "HTML Editor",
+   "label": "Content",
+   "mandatory_depends_on": "eval:doc.sticky_banner_enabled",
+   "max_height": "75px"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-02-16 21:27:56.994242",
+ "modified_by": "Administrator",
+ "module": "Vibe",
+ "name": "Vibe Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
