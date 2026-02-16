@@ -1,5 +1,5 @@
 import frappe
-from vibe.controllers.theme import sync_themes, import_theme
+from vibe.controllers.theme import sync_themes, import_theme, reset_invalid_themes
 from pathlib import Path
 import json
 
@@ -7,11 +7,13 @@ import json
 def after_install():
 	import_themes()
 	sync_themes()
+	reset_invalid_themes()
 
 
 def after_migrate():
 	import_themes()
 	sync_themes()
+	reset_invalid_themes()
 
 
 def import_themes():

@@ -181,3 +181,17 @@ def import_theme( theme_json ):
 		doc.save( ignore_permissions = True )
 
 	return doc
+
+
+def reset_invalid_themes():
+	user = frappe.qb.DocType( "User" )
+	vibeTheme = frappe.qb.DocType( "Vibe Theme" )
+	qb = (
+		frappe.qb.from_( user )
+		.left_join( vibeTheme ).on( user.desk_theme == vibeTheme.name )
+		.select( user.name )
+		.where( ( vibeTheme.disabled == 1 ) | ( vibeTheme.name.isnull() ) )
+		.where( user.desk_theme.notin( [ "Light", "Dark", "Automatic" ] ) )
+	)
+	for row in qb.run( pluck=True ):
+		frappe.db.set_value( "User", row, "desk_theme", "Light" )
