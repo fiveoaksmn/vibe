@@ -3,10 +3,6 @@
   "description": null,
   "palette": [
     {
-      "name": "apricot",
-      "color": "#ffa00a"
-    },
-    {
       "name": "slate",
       "color": "#36414c"
     },
@@ -37,6 +33,14 @@
     {
       "name": "dark-gray",
       "color": "#666666"
+    },
+    {
+      "name": "apricot",
+      "color": "#ffa00a"
+    },
+    {
+      "name": "medium-gray",
+      "color": "#999999"
     }
   ],
   "core": {
@@ -44,9 +48,10 @@
   },
   "navbar": {
     "background_color": "steel-gray",
-    "breadcrumb_color": "light-gray",
     "icon_color": "white",
-    "title_color": "white"
+    "breadcrumb_color": "light-gray",
+    "title_color": "white",
+    "breadcrumb_separator_color": "medium-gray"
   },
   "sidebar": {
     "background_color": "slate",
@@ -66,9 +71,9 @@
     "middle_hover_icon_color": "black",
     "middle_hover_item_color": "black",
     "middle_hover_item_suffix_color": "dark-gray",
-    "middle_active_background_color": "white",
-    "middle_active_icon_color": "apricot",
-    "middle_active_item_color": "apricot",
+    "middle_active_background_color": "light-gray",
+    "middle_active_icon_color": "black",
+    "middle_active_item_color": "black",
     "middle_active_item_suffix_color": "dark-gray",
     "footer_background_color": "",
     "footer_title_color": "white",

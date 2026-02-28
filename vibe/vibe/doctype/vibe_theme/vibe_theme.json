@@ -26,6 +26,7 @@
   "column_break_nqbi",
   "navbar_breadcrumb_color",
   "navbar_title_color",
+  "navbar_breadcrumb_separator_color",
   "column_break_cxmb",
   "html_nomi",
   "section_sidebar",
@@ -356,12 +357,17 @@
    "fieldname": "protect",
    "fieldtype": "Check",
    "label": "Protect"
+  },
+  {
+   "fieldname": "navbar_breadcrumb_separator_color",
+   "fieldtype": "Select",
+   "label": "Breadcrumb Separator"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-02-06 16:58:48.663713",
+ "modified": "2026-02-28 06:13:29.659531",
  "modified_by": "Administrator",
  "module": "Vibe",
  "name": "Vibe Theme",

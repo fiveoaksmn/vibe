@@ -13,7 +13,7 @@ import unicodedata
 class VibeTheme( Document ):
 	color_selects = [
 		"core_background_color",
-		"navbar_background_color", "navbar_icon_color", "nabar_breadcrumb_color", "navbar_title_color",
+		"navbar_background_color", "navbar_icon_color", "navbar_breadcrumb_color", "navbar_title_color", "navbar_breadcrumb_separator_color",
 		"sidebar_background_color", "sidebar_header_background_color", "sidebar_header_title_color",
 		"sidebar_header_subtitle_color", "sidebar_header_hover_background_color",
 		"sidebar_header_hover_title_color", "sidebar_header_hover_subtitle_color",
@@ -75,12 +75,13 @@ class VibeTheme( Document ):
 		css += self.generate_selector( [ ".sidebar-toggle-icon:hover .es-icon" ], [ { "property": "fill", "value": "${{navbar_icon_color}}", "important": True }, { "property": "stroke", "value": "${{navbar_icon_color}}" } ], minify=minify )
 
 		# Navbar Breadcrumbs
-		css += self.generate_selector( [ ".navbar-breadcrumbs > li > a:not(.disabled)", ".navbar-breadcrumbs li.ellipsis" ], [ { "property": "color", "value": "${{nabar_breadcrumb_color}}" } ], minify=minify )
-
-		# .navbar-breadcrumbs a::before
+		css += self.generate_selector( [ ".navbar-breadcrumbs > li:not(.disabled) > a", ".navbar-breadcrumbs li.ellipsis" ], [ { "property": "color", "value": "${{navbar_breadcrumb_color}}" } ], minify=minify )
 
 		# Navbar Page Title
-		css += self.generate_selector( [ ".navbar-breadcrumbs > li > a.disabled" ], [ { "property": "color", "value": "${{navbar_title_color}}" } ], minify=minify )
+		css += self.generate_selector( [ ".navbar-breadcrumbs > li.disabled > a", ".navbar-breadcrumbs li:last-child > a" ], [ { "property": "color", "value": "${{navbar_title_color}}", "important": True } ], minify=minify )
+
+		# Navbar Breadcrumb Separator
+		css += self.generate_selector( [ ".navbar-breadcrumbs a::before" ], [ { "property": "color", "value": "${{navbar_breadcrumb_separator_color}}" } ], minify=minify )
 
 
 		### SIDEBAR
@@ -128,7 +129,7 @@ class VibeTheme( Document ):
 		css += self.generate_selector( [ ".body-sidebar .standard-sidebar-item:not(.active-sidebar):has(a:not(.section-break)):hover" ], [ { "property": "background-color", "value": "${{sidebar_middle_hover_background_color}}" } ], minify=minify )
 
 		# Sidebar Middle: Hover Icon
-		css += self.generate_selector( [ ".standard-sidebar-item:not(.active-sidebar):hover a usvg", ".collapse-sidebar-link:hover svg" ], [ { "property": "color", "value": "${{sidebar_middle_hover_icon_color}}" }, { "property": "stroke", "value": "${{sidebar_middle_hover_icon_color}}" } ], minify=minify )
+		css += self.generate_selector( [ ".standard-sidebar-item:not(.active-sidebar):hover a svg", ".collapse-sidebar-link:hover svg" ], [ { "property": "color", "value": "${{sidebar_middle_hover_icon_color}}" }, { "property": "stroke", "value": "${{sidebar_middle_hover_icon_color}}" } ], minify=minify )
 
 		# Sidebar Middle: Hover Item
 		css += self.generate_selector( [ ".standard-sidebar-item:not(.active-sidebar):hover a .sidebar-item-label" ], [ { "property": "color", "value": "${{sidebar_middle_hover_item_color}}" } ], minify=minify )
@@ -140,7 +141,7 @@ class VibeTheme( Document ):
 		css += self.generate_selector( [ ".active-sidebar" ], [ { "property": "background-color", "value": "${{sidebar_middle_active_background_color}}" } ], minify=minify )
 
 		# Sidebar Middle: Active Icon
-		css += self.generate_selector( [ ".active-sidebar svg" ], [ { "property": "color", "value": "${{sidebar_middle_active_icon_color}}" }, { "property": "stroke", "value": "${{sidebar_middle_active_icon_color}}" } ], minify=minify )
+		css += self.generate_selector( [ ".active-sidebar svg" ], [ { "property": "color", "value": "${{sidebar_middle_active_icon_color}}", "important": True }, { "property": "stroke", "value": "${{sidebar_middle_active_icon_color}}", "important": True } ], minify=minify )
 
 		# Sidebar Middle: Active Item
 		css += self.generate_selector( [ ".active-sidebar .sidebar-item-label" ], [ { "property": "color", "value": "${{sidebar_middle_active_item_color}}" } ], minify=minify )
