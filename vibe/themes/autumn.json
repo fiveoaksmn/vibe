@@ -1,0 +1,93 @@
+{
+  "name": "Autumn",
+  "description": null,
+  "palette": [
+    {
+      "name": "warm-cream",
+      "color": "#FBF6EF"
+    },
+    {
+      "name": "off-white",
+      "color": "#FFFDF9"
+    },
+    {
+      "name": "sand",
+      "color": "#E6D9C8"
+    },
+    {
+      "name": "espresso",
+      "color": "#2A1E16"
+    },
+    {
+      "name": "brown",
+      "color": "#6B4E3D"
+    },
+    {
+      "name": "caramel",
+      "color": "#9A7B66"
+    },
+    {
+      "name": "burnt-orange",
+      "color": "#C35A2A"
+    },
+    {
+      "name": "dark-orange",
+      "color": "#A84C24"
+    },
+    {
+      "name": "autumn-gold",
+      "color": "#D89B2D"
+    },
+    {
+      "name": "brick-red",
+      "color": "#8E2F2A"
+    },
+    {
+      "name": "deep-green",
+      "color": "#2F5D3A"
+    },
+    {
+      "name": "pale-orange",
+      "color": "#F5EBDD"
+    }
+  ],
+  "core": {
+    "background_color": "warm-cream"
+  },
+  "navbar": {
+    "background_color": "burnt-orange",
+    "icon_color": "warm-cream",
+    "breadcrumb_color": "espresso",
+    "title_color": "warm-cream",
+    "breadcrumb_separator_color": "sand"
+  },
+  "sidebar": {
+    "background_color": "espresso",
+    "header_background_color": null,
+    "header_title_color": "pale-orange",
+    "header_subtitle_color": null,
+    "header_hover_background_color": "brick-red",
+    "header_hover_title_color": "pale-orange",
+    "header_hover_subtitle_color": "autumn-gold",
+    "header_active_background_color": "burnt-orange",
+    "header_active_title_color": null,
+    "header_active_subtitle_color": null,
+    "middle_icon_color": null,
+    "middle_item_color": "pale-orange",
+    "middle_item_suffix_color": null,
+    "middle_hover_background_color": "brick-red",
+    "middle_hover_icon_color": "pale-orange",
+    "middle_hover_item_color": "pale-orange",
+    "middle_hover_item_suffix_color": "pale-orange",
+    "middle_active_background_color": "burnt-orange",
+    "middle_active_icon_color": "pale-orange",
+    "middle_active_item_color": "pale-orange",
+    "middle_active_item_suffix_color": null,
+    "footer_background_color": null,
+    "footer_title_color": "pale-orange",
+    "footer_subtitle_color": null,
+    "footer_hover_background_color": "brick-red",
+    "footer_hover_title_color": "pale-orange",
+    "footer_hover_subtitle_color": "autumn-gold"
+  }
+}
