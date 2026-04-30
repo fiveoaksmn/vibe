@@ -12,6 +12,12 @@ bench get-app $URL_OF_THIS_REPO --branch deploy
 bench install-app vibe
 ```
 
+Optionally install the `rcssmin` library for minified CSS.
+
+```angular2html
+pip install rcssmin
+```
+
 ### License
 
 mit

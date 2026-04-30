@@ -9,7 +9,10 @@
   "sticky_banner_enabled",
   "sticky_banner_text_color",
   "sticky_banner_background_color",
-  "sticky_banner_content"
+  "sticky_banner_content",
+  "section_custom_css",
+  "custom_css",
+  "custom_css_minified"
  ],
  "fields": [
   {
@@ -43,13 +46,28 @@
    "label": "Content",
    "mandatory_depends_on": "eval:doc.sticky_banner_enabled",
    "max_height": "75px"
+  },
+  {
+   "fieldname": "section_custom_css",
+   "fieldtype": "Section Break",
+   "label": "Custom CSS"
+  },
+  {
+   "fieldname": "custom_css",
+   "fieldtype": "Code",
+   "options": "CSS"
+  },
+  {
+   "fieldname": "custom_css_minified",
+   "fieldtype": "Code",
+   "hidden": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2026-02-16 21:27:56.994242",
+ "modified": "2026-04-30 18:46:29.946173",
  "modified_by": "Administrator",
  "module": "Vibe",
  "name": "Vibe Settings",
