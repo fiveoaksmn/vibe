@@ -8,6 +8,16 @@ app_license = "mit"
 # Apps
 # ------------------
 
+app_icon_url = "/assets/vibe/img/vibe_icon.png"
+add_to_apps_screen = [
+    {
+        "name": "vibe",
+        "logo": "/assets/vibe/img/vibe_icon.png",
+        "title": "Vibe",
+        "route": "/desk/vibe-theme/",
+    }
+]
+
 # required_apps = []
 
 # Each item in the list will be shown as an app in the apps page
