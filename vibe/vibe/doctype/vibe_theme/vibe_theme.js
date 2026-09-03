@@ -55,7 +55,9 @@ frappe.ui.form.on( "Vibe Theme", {
 		}
 
 		const fields = [
-			"core_background_color", "core_primary_color", "core_secondary_color", "core_success_color", "core_danger_color", "core_warning_color", "core_info_color",
+            "core_primary_text_color", "core_secondary_text_color", "core_link_color",
+            "core_background_color", "core_surface_color", "core_border_color",
+            "core_primary_color", "core_secondary_color", "core_success_color", "core_danger_color", "core_warning_color", "core_info_color",
 			"navbar_background_color", "navbar_icon_color", "navbar_breadcrumb_color", "navbar_title_color", "navbar_breadcrumb_separator_color",
 			"sidebar_background_color",
 			"sidebar_header_background_color", "sidebar_header_title_color", "sidebar_header_subtitle_color", "sidebar_header_hover_background_color", "sidebar_header_hover_title_color", "sidebar_header_hover_subtitle_color", "sidebar_header_active_background_color", "sidebar_header_active_title_color", "sidebar_header_active_subtitle_color",

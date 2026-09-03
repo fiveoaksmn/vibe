@@ -15,16 +15,21 @@
   "section_palette",
   "palette",
   "core_section",
-  "core_background_color",
+  "text_colors_column",
+  "core_primary_text_color",
+  "core_secondary_text_color",
+  "core_link_color",
   "column_break_havx",
+  "core_background_color",
+  "core_surface_color",
+  "core_border_color",
+  "column_break_luca",
   "core_primary_color",
   "core_secondary_color",
   "core_success_color",
   "core_danger_color",
   "core_warning_color",
   "core_info_color",
-  "column_break_luca",
-  "html_hyci",
   "section_navbar",
   "navbar_background_color",
   "navbar_icon_color",
@@ -326,15 +331,13 @@
   },
   {
    "fieldname": "column_break_havx",
-   "fieldtype": "Column Break"
+   "fieldtype": "Column Break",
+   "label": "Surface Colors"
   },
   {
    "fieldname": "column_break_luca",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "html_hyci",
-   "fieldtype": "HTML"
+   "fieldtype": "Column Break",
+   "label": "Action Colors"
   },
   {
    "fieldname": "column_break_uxbo",
@@ -393,12 +396,42 @@
    "fieldname": "core_info_color",
    "fieldtype": "Select",
    "label": "Info Color"
+  },
+  {
+   "fieldname": "core_link_color",
+   "fieldtype": "Select",
+   "label": "Link Color"
+  },
+  {
+   "fieldname": "text_colors_column",
+   "fieldtype": "Column Break",
+   "label": "Text Colors"
+  },
+  {
+   "fieldname": "core_surface_color",
+   "fieldtype": "Select",
+   "label": "Surface Color"
+  },
+  {
+   "fieldname": "core_border_color",
+   "fieldtype": "Select",
+   "label": "Border Color"
+  },
+  {
+   "fieldname": "core_primary_text_color",
+   "fieldtype": "Select",
+   "label": "Primary Text Color"
+  },
+  {
+   "fieldname": "core_secondary_text_color",
+   "fieldtype": "Select",
+   "label": "Secondary Text Color"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-08-14 09:12:59.953849",
+ "modified": "2026-09-03 08:10:14.753884",
  "modified_by": "Administrator",
  "module": "Vibe",
  "name": "Vibe Theme",
