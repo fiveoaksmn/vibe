@@ -17,7 +17,12 @@
   "core_section",
   "core_background_color",
   "column_break_havx",
-  "html_ykhg",
+  "core_primary_color",
+  "core_secondary_color",
+  "core_success_color",
+  "core_danger_color",
+  "core_warning_color",
+  "core_info_color",
   "column_break_luca",
   "html_hyci",
   "section_navbar",
@@ -324,10 +329,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "html_ykhg",
-   "fieldtype": "HTML"
-  },
-  {
    "fieldname": "column_break_luca",
    "fieldtype": "Column Break"
   },
@@ -362,12 +363,42 @@
    "fieldname": "navbar_breadcrumb_separator_color",
    "fieldtype": "Select",
    "label": "Breadcrumb Separator"
+  },
+  {
+   "fieldname": "core_primary_color",
+   "fieldtype": "Select",
+   "label": "Primary Color"
+  },
+  {
+   "fieldname": "core_secondary_color",
+   "fieldtype": "Select",
+   "label": "Secondary Color"
+  },
+  {
+   "fieldname": "core_success_color",
+   "fieldtype": "Select",
+   "label": "Success Color"
+  },
+  {
+   "fieldname": "core_danger_color",
+   "fieldtype": "Select",
+   "label": "Danger Color"
+  },
+  {
+   "fieldname": "core_warning_color",
+   "fieldtype": "Select",
+   "label": "Warning Color"
+  },
+  {
+   "fieldname": "core_info_color",
+   "fieldtype": "Select",
+   "label": "Info Color"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-02-28 06:13:29.659531",
+ "modified": "2026-08-14 09:12:59.953849",
  "modified_by": "Administrator",
  "module": "Vibe",
  "name": "Vibe Theme",

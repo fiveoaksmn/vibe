@@ -18,6 +18,10 @@ Optionally install the `rcssmin` library for minified CSS.
 pip install rcssmin
 ```
 
+### See Also
+
+The color palette that Frappe uses can be found in `frappe/public/scss/espresso/_colors.scss`.
+
 ### License
 
 mit
