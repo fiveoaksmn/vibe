@@ -58,13 +58,22 @@ class VibeTheme( Document ):
 
     def get_css( self, minify=True ):
         variables = []
+        self.set_variable( variables, [ "text-color" ], "core_primary_text_color" )
+        self.set_variable( variables, [ "text-muted" ], "core_secondary_text_color" )
+        self.set_variable( variables, [ "text-info", "alert-text-info" ], "core_info_color" )
+        self.set_variable( variables, [ "text-success", "alert-text-success" ], "core_success_color" )
+        self.set_variable( variables, [ "text-warning", "alert-text-warning" ], "core_warning_color" )
         self.set_variable( variables, [ "text-danger", "alert-text-danger" ], "core_danger_color" )
+        self.set_variable( variables, [ "primary", "primary-color" ], "core_primary_color" )
         css = self.generate_palette( minify = minify, additional = variables )
 
         ### CORE
 
         # Page Background (desktop bakground and grid footer is below child tables)
         css += self.generate_selector( [ "body", ".std-form-layout > .form-layout > .form-page", ".desktop-container", ".grid-footer" ], [ { "property": "background-color", "value": "${{core_background_color}}", "important": True } ], minify=minify )
+
+        if self.core_link_color:
+            css += self.generate_selector( [ "a" ], [ { "property": "color", "value": "${{core_link_color}}" } ], minify=minify )
 
 
         ### NAVBAR
@@ -216,47 +225,35 @@ class VibeTheme( Document ):
             lines.append( f"{theme_selector} {{" )
 
         # Generate each color variable
+        palette = { }
         for row in self.palette:
             var_name = "--" + self.sanitize_name( row.color_name )  # e.g., --primary-color
             var_value = row.color.strip()
+            palette[ self.sanitize_name( row.color_name ) ] = var_value
             if minify:
                 lines.append( f"{var_name}:{var_value};" )
             else:
                 lines.append( f"    {var_name}: {var_value};" )
 
-        # # Additional color variables
-        # if additional is not None:
-        #     for row in additional:
-        #         var_name = "--" + row[ "color_name" ]
-        #         var_value = row[ "color" ]
-        #         if minify:
-        #             lines.append( f"{var_name}:{var_value} !important;" )
-        #         else:
-        #             lines.append( f"    {var_name}: {var_value} !important;" )
-
         # Closing bracket
         lines.append( "}" if minify else "}\n\n" )
 
-
-
-
-
-
         # Opening bracket
         if minify:
-            lines.append( f"{theme_selector}:root{{" )
+            lines.append( f":root{theme_selector}{{" )
         else:
-            lines.append( f"{theme_selector} :root {{" )
+            lines.append( f":root{theme_selector} {{" )
 
         # Additional color variables
         if additional is not None:
             for row in additional:
                 var_name = "--" + row[ "color_name" ]
-                var_value = row[ "color" ]
-                if minify:
-                    lines.append( f"{var_name}:{var_value} !important;" )
-                else:
-                    lines.append( f"    {var_name}: {var_value} !important;" )
+                if row[ "color" ] in palette:
+                    var_value = palette[ row[ "color" ] ]
+                    if minify:
+                        lines.append( f"{var_name}:{var_value} !important;" )
+                    else:
+                        lines.append( f"    {var_name}: {var_value} !important;" )
 
         lines.append( "}" if minify else "}\n\n" )
 
