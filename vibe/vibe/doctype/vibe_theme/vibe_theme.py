@@ -189,12 +189,6 @@ class VibeTheme( Document ):
             ], minify = minify
         )
 
-        # Custom
-        if minify:
-            css += ( self.custom_css_minified ) if self.custom_css_minified else ""
-        else:
-            css += ( self.custom_css ) if self.custom_css else ""
-
         ### Theme Preview
 
         css += self.generate_selector( [ ".theme-grid div[data-theme='" + self.theme_title.lower() + "'] .background" ], [ { "property": "background-color", "value": "${{core_background_color}}", "important": True } ], minify=minify, theme_selector=False )
