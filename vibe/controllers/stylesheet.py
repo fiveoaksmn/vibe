@@ -8,11 +8,14 @@ def css():
     css_content = ""
     minify = False
 
-    vibeTheme = frappe.qb.DocType( "Vibe Theme" )
+    VibeTheme = frappe.qb.DocType( "Vibe Theme" )
+    User = frappe.qb.DocType( "User" )
     rows = (
-        frappe.qb.from_( vibeTheme )
-        .select( vibeTheme.name )
-        .where( vibeTheme.disabled == 0 )
+        frappe.qb.from_( VibeTheme )
+        .join( User ).on( User.desk_theme == VibeTheme.name )
+        .select( VibeTheme.name )
+        .where( VibeTheme.disabled == 0 )
+        .where( User.name == ( frappe.session.user or None ) )
     ).run( as_dict=True )
     for row in rows:
         theme = frappe.get_doc( "Vibe Theme", row.name )
