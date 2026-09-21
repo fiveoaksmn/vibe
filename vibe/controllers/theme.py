@@ -4,17 +4,21 @@ from frappe.query_builder.functions import Lower
 
 @frappe.whitelist()
 def switch_theme( theme ):
-	vibeTheme = frappe.qb.DocType( "Vibe Theme" )
+	# Check if the theme is one of the Frappe defaults
+	if theme in [ "Dark", "Light", "Automatic" ]:
+		frappe.db.set_value( "User", frappe.session.user, "desk_theme", theme )
+
+	VibeTheme = frappe.qb.DocType( "Vibe Theme" )
 	qb = (
-		frappe.qb.from_( vibeTheme )
-		.select( vibeTheme.theme_title )
-		.where( vibeTheme.disabled == 0 )
-		.where( Lower( vibeTheme.theme_title ) == theme.lower() )
+		frappe.qb.from_( VibeTheme )
+		.select( VibeTheme.theme_title )
+		.where( VibeTheme.disabled == 0 )
+		.where( Lower( VibeTheme.theme_title ) == theme.lower() )
 	)
 
 	# Published only if the user is not a developer
 	if "System Manager" not in frappe.get_roles( frappe.session.user ):
-		qb = qb.where( vibeTheme.published == 1 )
+		qb = qb.where( VibeTheme.published == 1 )
 
 	rows = qb.run( as_dict=True )
 	if len( rows ) > 0:
