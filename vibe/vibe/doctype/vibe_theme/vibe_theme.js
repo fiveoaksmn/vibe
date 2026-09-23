@@ -7,7 +7,7 @@ const VIBE_COLOR_FIELDS = [
 	"core_primary_color", "core_secondary_color", "core_success_color", "core_danger_color", "core_warning_color", "core_info_color",
 	"navbar_background_color", "navbar_icon_color", "navbar_breadcrumb_color", "navbar_title_color", "navbar_breadcrumb_separator_color",
 	"sidebar_background_color",
-	"sidebar_header_background_color", "sidebar_header_title_color", "sidebar_header_subtitle_color", "sidebar_header_hover_background_color", "sidebar_header_hover_title_color", "sidebar_header_hover_subtitle_color", "sidebar_header_active_background_color", "sidebar_header_active_title_color", "sidebar_header_active_subtitle_color",
+	"sidebar_header_background_color", "sidebar_header_title_color", "sidebar_header_subtitle_color", "sidebar_header_hover_background_color", "sidebar_header_hover_title_color", "sidebar_header_hover_subtitle_color", "sidebar_header_active_background_color", "sidebar_header_active_title_color", "sidebar_header_active_subtitle_color", "sidebar_notification_dot_color",
 	"sidebar_middle_icon_color", "sidebar_middle_item_color", "sidebar_middle_item_suffix_color", "sidebar_middle_hover_background_color", "sidebar_middle_hover_icon_color", "sidebar_middle_hover_item_color", "sidebar_middle_hover_item_suffix_color", "sidebar_middle_active_background_color", "sidebar_middle_active_icon_color", "sidebar_middle_active_item_color", "sidebar_middle_active_item_suffix_color",
 	"sidebar_footer_background_color", "sidebar_footer_title_color", "sidebar_footer_subtitle_color", "sidebar_footer_hover_background_color", "sidebar_footer_hover_title_color", "sidebar_footer_hover_subtitle_color"
 ];

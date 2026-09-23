@@ -64,6 +64,7 @@
     "header_active_background_color": null,
     "header_active_title_color": null,
     "header_active_subtitle_color": null,
+    "notification_dot_color": "bright-yellow",
     "middle_icon_color": "white",
     "middle_item_color": "white",
     "middle_item_suffix_color": "light-gray",
@@ -80,6 +81,7 @@
     "footer_subtitle_color": "light-gray",
     "footer_hover_background_color": "apricot",
     "footer_hover_title_color": "black",
-    "footer_hover_subtitle_color": "dark-gray"
+    "footer_hover_subtitle_color": "dark-gray",
+    "notification_dot_size": 8
   }
 }

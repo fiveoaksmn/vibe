@@ -29,6 +29,10 @@
     {
       "name": "terracotta",
       "color": "#C06D3B"
+    },
+    {
+      "name": "yellow",
+      "color": "#F7FF00"
     }
   ],
   "core": {
@@ -51,6 +55,7 @@
     "header_active_background_color": "terracotta",
     "header_active_title_color": "dark-brown",
     "header_active_subtitle_color": "dark-brown",
+    "notification_dot_color": "yellow",
     "middle_icon_color": "light-grayish-orange",
     "middle_item_color": "light-grayish-orange",
     "middle_item_suffix_color": "light-grayish-orange",
@@ -67,6 +72,7 @@
     "footer_subtitle_color": "linen",
     "footer_hover_background_color": "dark-grayish-orange",
     "footer_hover_title_color": null,
-    "footer_hover_subtitle_color": null
+    "footer_hover_subtitle_color": null,
+    "notification_dot_size": 8
   }
 }

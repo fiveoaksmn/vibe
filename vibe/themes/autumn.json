@@ -49,6 +49,10 @@
     {
       "name": "pale-orange",
       "color": "#F5EBDD"
+    },
+    {
+      "name": "yellow",
+      "color": "#F7FF00"
     }
   ],
   "core": {
@@ -72,6 +76,7 @@
     "header_active_background_color": "burnt-orange",
     "header_active_title_color": null,
     "header_active_subtitle_color": null,
+    "notification_dot_color": "yellow",
     "middle_icon_color": null,
     "middle_item_color": "pale-orange",
     "middle_item_suffix_color": null,
@@ -88,6 +93,7 @@
     "footer_subtitle_color": null,
     "footer_hover_background_color": "brick-red",
     "footer_hover_title_color": "pale-orange",
-    "footer_hover_subtitle_color": "autumn-gold"
+    "footer_hover_subtitle_color": "autumn-gold",
+    "notification_dot_size": 8
   }
 }

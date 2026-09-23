@@ -56,6 +56,9 @@
   "sidebar_header_active_background_color",
   "sidebar_header_active_title_color",
   "sidebar_header_active_subtitle_color",
+  "sidebar_header_break1",
+  "sidebar_notification_dot_color",
+  "sidebar_notification_dot_size",
   "sidebar_menu_column",
   "sidebar_middle_icon_color",
   "sidebar_middle_item_color",
@@ -426,12 +429,30 @@
    "fieldname": "core_secondary_text_color",
    "fieldtype": "Select",
    "label": "Secondary Text Color"
+  },
+  {
+   "fieldname": "sidebar_header_break1",
+   "fieldtype": "HTML",
+   "options": "<hr>"
+  },
+  {
+   "fieldname": "sidebar_notification_dot_color",
+   "fieldtype": "Select",
+   "label": "Notification Dot"
+  },
+  {
+   "default": "6",
+   "description": "Number between 0 and 10",
+   "fieldname": "sidebar_notification_dot_size",
+   "fieldtype": "Int",
+   "label": "Notification Dot Size",
+   "non_negative": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-09-03 08:10:14.753884",
+ "modified": "2026-09-23 05:33:27.146497",
  "modified_by": "Administrator",
  "module": "Vibe",
  "name": "Vibe Theme",

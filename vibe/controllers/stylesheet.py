@@ -9,17 +9,20 @@ def css():
     minify = False
 
     VibeTheme = frappe.qb.DocType( "Vibe Theme" )
-    User = frappe.qb.DocType( "User" )
     rows = (
         frappe.qb.from_( VibeTheme )
-        .join( User ).on( User.desk_theme == VibeTheme.name )
         .select( VibeTheme.name )
         .where( VibeTheme.disabled == 0 )
-        .where( User.name == ( frappe.session.user or None ) )
     ).run( as_dict=True )
-    for row in rows:
-        theme = frappe.get_doc( "Vibe Theme", row.name )
-        css_content += theme.get_css( minify=minify )
+    themes = [ frappe.get_doc( "Vibe Theme", row.name ) for row in rows ]
+
+    # Each theme contributes only its variables (on :root[data-theme="..."]) and its .theme-grid preview
+    for theme in themes:
+        css_content += theme.get_css( minify = minify, include_rules = False )
+
+    # Component rules are written once, shared by all themes, and read the active theme's variables
+    if themes:
+        css_content += themes[ 0 ].generate_rules( themes, minify = minify )
 
     # Address defect in which the "Light", "Dark", and "Automatic" theme previews have the navbar inheriting the currently selected theme
     css_content += ".theme-grid div[data-theme=\"light\"] .navbar{background-color: #ededed !important;} .theme-grid div[data-theme=\"dark\"] .navbar{background-color: black !important;}"
