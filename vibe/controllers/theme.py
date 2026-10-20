@@ -90,7 +90,7 @@ def sync_themes():
 		property.doctype_or_field = "DocField"
 		property.doc_type = "User"
 		property.field_name = "desk_theme"
-		property.module = "Business"
+		property.module = "Vibe"
 		property.property = "options"
 		property.value = options
 		property.default_value = "Light"
