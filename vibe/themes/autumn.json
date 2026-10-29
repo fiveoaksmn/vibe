@@ -56,7 +56,18 @@
     }
   ],
   "core": {
-    "background_color": "warm-cream"
+    "primary_text_color": null,
+    "secondary_text_color": null,
+    "link_color": null,
+    "background_color": "warm-cream",
+    "surface_color": null,
+    "border_color": null,
+    "primary_color": null,
+    "secondary_color": null,
+    "success_color": null,
+    "danger_color": null,
+    "warning_color": null,
+    "info_color": null
   },
   "navbar": {
     "background_color": "burnt-orange",
@@ -79,7 +90,7 @@
     "notification_dot_color": "yellow",
     "middle_icon_color": null,
     "middle_item_color": "pale-orange",
-    "middle_item_suffix_color": null,
+    "middle_item_suffix_color": "sand",
     "middle_hover_background_color": "brick-red",
     "middle_hover_icon_color": "pale-orange",
     "middle_hover_item_color": "pale-orange",
