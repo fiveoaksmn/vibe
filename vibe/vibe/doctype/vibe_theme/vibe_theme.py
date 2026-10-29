@@ -138,7 +138,7 @@ class VibeTheme( Document ):
         # Sidebar Middle: Icons / Item / Item Suffix
         ( [ ".sidebar-item-icon svg:not(.sidebar-item-icon > .header-logo svg)", ".collapse-sidebar-link svg" ], [ { "property": "color", "value": "${{sidebar_middle_icon_color}}" }, { "property": "stroke", "value": "${{sidebar_middle_icon_color}}" } ] ),
         ( [ ".standard-sidebar-item:not(.active-sidebar) .sidebar-item-label" ], [ { "property": "color", "value": "${{sidebar_middle_item_color}}" } ] ),
-        ( [ ".sidebar-item-suffix .keyboard-shortcut", ".collapse-sidebar-link" ], [ { "property": "color", "value": "${{sidebar_middle_item_suffix_color}}" } ] ),
+        ( [ ".sidebar-item-suffix", ".collapse-sidebar-link", ".bn-flyout-open a.item-anchor", ".bn-flyout-open a.item-anchor .sidebar-item-label", ".bn-flyout-open a.item-anchor svg" ], [ { "property": "color", "value": "${{sidebar_middle_item_suffix_color}}", "important": True } ] ),
 
         # Sidebar Middle: Hover
         ( [ ".body-sidebar .standard-sidebar-item:not(.active-sidebar):has(a:not(.section-break)):hover" ], [ { "property": "background-color", "value": "${{sidebar_middle_hover_background_color}}" } ] ),
