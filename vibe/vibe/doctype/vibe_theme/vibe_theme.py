@@ -87,7 +87,7 @@ class VibeTheme( Document ):
     #    A declaration is only emitted for the themes that set every field it references, so an unset
     #    field still falls back to Frappe's default instead of blanking the property.
     _RULES = [
-            ### CORE
+        ### CORE
 
         # Page Background
         ( [ "body", ".std-form-layout > .form-layout > .form-page", ".desktop-container", ".grid-footer" ], [ { "property": "background-color", "value": "${{core_background_color}}", "important": True } ] ),
@@ -95,29 +95,29 @@ class VibeTheme( Document ):
         # Links
         ( [ "a" ], [ { "property": "color", "value": "${{core_link_color}}" } ] ),
 
-            ### NAVBAR
+        ### NAVBAR
 
-            # Navbar Background
+        # Navbar Background
         ( [ ".page-head-content", ".navbar" ], [ { "property": "background-color", "value": "${{navbar_background_color}}", "important": True } ] ),
 
-            # Navbar Icon
+        # Navbar Icon
         ( [ ".navbar-breadcrumbs > li > a > svg", ".sidebar-toggle-icon svg", ".sidebar-toggle-btn svg" ], [ { "property": "color", "value": "${{navbar_icon_color}}", "important": True }, { "property": "stroke", "value": "${{navbar_icon_color}}" } ] ),
 
-            # Navbar Toggle Icon Hovered
+        # Navbar Toggle Icon Hovered
         ( [ ".sidebar-toggle-icon:hover .es-icon" ], [ { "property": "fill", "value": "${{navbar_icon_color}}", "important": True }, { "property": "stroke", "value": "${{navbar_icon_color}}" } ] ),
 
-            # Navbar Breadcrumbs
+        # Navbar Breadcrumbs
         ( [ ".navbar-breadcrumbs > li:not(.disabled) > a", ".navbar-breadcrumbs li.ellipsis" ], [ { "property": "color", "value": "${{navbar_breadcrumb_color}}" } ] ),
 
-            # Navbar Page Title
+        # Navbar Page Title
         ( [ ".navbar-breadcrumbs > li.disabled > a", ".navbar-breadcrumbs li:last-child > a" ], [ { "property": "color", "value": "${{navbar_title_color}}", "important": True } ] ),
 
-            # Navbar Breadcrumb Separator
+        # Navbar Breadcrumb Separator
         ( [ ".navbar-breadcrumbs a::before" ], [ { "property": "color", "value": "${{navbar_breadcrumb_separator_color}}" } ] ),
 
-            ### SIDEBAR
+        ### SIDEBAR
 
-            # Sidebar Background
+        # Sidebar Background
         ( [ ".body-sidebar" ], [ { "property": "background-color", "value": "${{sidebar_background_color}}", "important": True } ] ),
 
         # Sidebar Header: Background / Title / Subtitle
@@ -162,7 +162,7 @@ class VibeTheme( Document ):
         ( [ ".body-sidebar-container.expanded .body-sidebar .dropdown-navbar-user:hover .avatar-name-email" ], [ { "property": "color", "value": "${{sidebar_footer_hover_title_color}}" } ] ),
         ( [ ".body-sidebar-container.expanded .body-sidebar .dropdown-navbar-user:hover .avatar-name-email > .text-secondary" ], [ { "property": "color", "value": "${{sidebar_footer_hover_subtitle_color}}" } ] ),
 
-            # Sidebar Footer: Fix Padding & Borders
+        # Sidebar Footer: Fix Padding & Borders
         ( [ ".body-sidebar-container.expanded .body-sidebar .dropdown-navbar-user" ], [
                     { "property": "border-radius", "value": "8px", "important": True },
                     { "property": "padding-left", "value": "8px" },
@@ -175,6 +175,27 @@ class VibeTheme( Document ):
         ( [ ".sidebar-notification .sidebar-item-icon.indicator::before", ".desktop-notification-icon.indicator::before" ], [ { "property": "width", "value": "${{sidebar_notification_dot_size}}" }, { "property": "height", "value": "${{sidebar_notification_dot_size}}" } ] ),
     ]
     _PLACEHOLDER = re.compile( r"\${{\s*(\w+)\s*}}" )
+
+    # Theme preview rules for Frappe 16.50+ theme cards, as ( selectors, declarations ).
+    #    Selectors are relative to .theme-grid .theme-preview-container[data-theme='<theme>'].
+    #    Values are resolved straight to hex (the preview container is not :root, so --vibe-* variables don't reach it).
+    _PREVIEW_RULES = [
+        # Window frame + page background
+        ( [ ".theme-preview-frame" ], [ { "property": "background-color", "value": "${{core_background_color}}", "important": True }, { "property": "border-color", "value": "${{core_border_color}}", "important": True } ] ),
+        ( [ ".theme-preview-content", ".theme-preview-main", ".theme-preview-body" ], [ { "property": "background-color", "value": "${{core_background_color}}", "important": True } ] ),
+
+        # Sidebar
+        ( [ ".theme-preview-sidebar" ], [ { "property": "background-color", "value": "${{sidebar_background_color}}", "important": True } ] ),
+
+        # Page head (navbar) / title / primary action button
+        ( [ ".theme-preview-header" ], [ { "property": "background-color", "value": "${{navbar_background_color}}", "important": True } ] ),
+        ( [ ".theme-preview-header-title" ], [ { "property": "background-color", "value": "${{navbar_title_color}}", "important": True } ] ),
+        ( [ ".theme-preview-header-action" ], [ { "property": "background-color", "value": "${{core_primary_color}}", "important": True } ] ),
+
+        # Form fields: label bar / input box
+        ( [ ".theme-preview-label" ], [ { "property": "background-color", "value": "${{core_secondary_text_color}}", "important": True } ] ),
+        ( [ ".theme-preview-input" ], [ { "property": "background-color", "value": "${{core_surface_color}}", "important": True }, { "property": "border-color", "value": "${{core_border_color}}", "important": True } ] ),
+    ]
 
 
     # Generate this theme's CSS
@@ -190,7 +211,7 @@ class VibeTheme( Document ):
             if include_rules:
                 css += VibeTheme.generate_rules( [ self ], minify = minify )
 
-        ### Theme Preview
+        ### Theme Preview (pre-16.50 card markup: .background / .navbar / .toolbar > .text)
 
         css += self.generate_selector( [ ".theme-grid div[data-theme='" + self.theme_title.lower() + "'] .background" ], [ { "property": "background-color", "value": "${{core_background_color}}", "important": True } ], minify = minify, theme_selector = False, use_hex = True )
         if self.navbar_background_color is not None:
@@ -198,6 +219,14 @@ class VibeTheme( Document ):
         else:
             css += self.generate_selector( [ ".theme-grid div[data-theme='" + self.theme_title.lower() + "'] .navbar" ], [ { "property": "background-color", "value": "#ededed", "important": True } ], minify = minify, theme_selector = False, use_hex = True )
         css += self.generate_selector( [ ".theme-grid div[data-theme='" + self.theme_title.lower() + "'] .toolbar > .text" ], [ { "property": "background-color", "value": "${{sidebar_background_color}}", "important": True } ], minify = minify, theme_selector = False, use_hex = True )
+
+        ### Theme Preview (16.50+ card markup: .theme-preview-container[data-theme] > .theme-preview-frame)
+        #    Both preview blocks are always emitted. Each block's selectors only exist in its own Frappe
+        #    version's markup, so the other block simply matches nothing and no version check is needed.
+        #    Declarations whose field is unset are skipped, leaving Frappe's default preview color in place.
+        container = ".theme-grid .theme-preview-container[data-theme='" + self.theme_title.lower() + "']"
+        for selectors, declarations in self._PREVIEW_RULES:
+            css += self.generate_selector( [ f"{container} {s}" for s in selectors ], declarations, minify = minify, theme_selector = False, use_hex = True )
 
         return css
 
@@ -419,6 +448,10 @@ class VibeTheme( Document ):
                 css_lines.append( f"{prop}:{value}{important};" )
             else:
                 css_lines.append( f"    {prop}: {value}{important};" )
+
+        # Every declaration was skipped (fields unset), so emit nothing rather than an empty block
+        if len( css_lines ) == 1:
+            return ""
 
         # Close CSS block
         css_lines.append( "}" if minify else "}\n\n" )
