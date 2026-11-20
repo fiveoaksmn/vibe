@@ -31,12 +31,20 @@ add_to_apps_screen = [
 # 	}
 # ]
 
+
+# Get the app version and apply to assets below in order to trigger a cache refresh upon new version
+import frappe
+try:
+    version = frappe.get_attr( f"orbit.__version__" )
+except Exception:
+    version = "NA"
+
 # Includes in <head>
 # ------------------
 
 # include js, css files in header of desk.html
-app_include_css = [ "/assets/vibe/css/vibe.css", "/api/method/vibe.controllers.stylesheet.css" ]
-app_include_js = "/assets/vibe/js/vibe.js"
+app_include_css = [ f"/assets/vibe/css/vibe.css?v={version}", "/api/method/vibe.controllers.stylesheet.css" ]
+app_include_js = f"/assets/vibe/js/vibe.js?v={version}"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/vibe/css/vibe.css"
